@@ -36,7 +36,6 @@ public class Ball {
     public void create() {
         sprite = new Sprite(new Texture(Gdx.files.internal("./images/ball.png")));
         hit = new Hit();
-
         directionX = directionY = 6.24f;
     }
 
@@ -48,6 +47,8 @@ public class Ball {
 
         if (Gdx.input.isKeyJustPressed(Keys.SPACE))
             running = true;
+
+        // score.render();
 
         batch.draw(sprite, position.x, position.y);
     }
@@ -83,11 +84,11 @@ public class Ball {
         }
     }
 
-    protected static float getWidth() {
+    public static float getWidth() {
         return sprite.getWidth();
     }
 
-    protected static float getHeight() {
+    public static float getHeight() {
         return sprite.getHeight();
     }
 }

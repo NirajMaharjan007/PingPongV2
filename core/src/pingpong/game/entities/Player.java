@@ -10,7 +10,7 @@ public class Player {
     SpriteBatch batch;
     static Sprite sprite;
 
-    protected static Vector2 position = new Vector2();
+    public static Vector2 position = new Vector2();
 
     protected static float paddle_speed = 12.6f;
 
@@ -34,7 +34,7 @@ public class Player {
     public void create() {
         sprite = new Sprite(new Texture(Gdx.files.internal("./images/paddle_one.png")));
 
-        position.x = 20.0f;
+        position.x = 10.0f;
         position.y = Gdx.graphics.getHeight() / 2;
     }
 
@@ -43,11 +43,11 @@ public class Player {
         batch.draw(sprite, position.x, position.y);
     }
 
-    protected static float getWidth() {
+    public static float getWidth() {
         return sprite.getWidth();
     }
 
-    protected static float getHeight() {
+    public static float getHeight() {
         return sprite.getHeight();
     }
 }

@@ -11,7 +11,7 @@ public class Enemy {
 
     static Sprite sprite;
 
-    protected static Vector2 position = new Vector2(Gdx.graphics.getWidth() - 26.4f, Gdx.graphics.getHeight() / 2);
+    public static Vector2 position = new Vector2(Gdx.graphics.getWidth() - 20.0f, Gdx.graphics.getHeight() / 2);
 
     private float paddle_speed = 12.8f;
 
@@ -41,11 +41,11 @@ public class Enemy {
             position.y += paddle_speed;
     }
 
-    protected static float getWidth() {
+    public static float getWidth() {
         return sprite.getWidth();
     }
 
-    protected static float getHeight() {
+    public static float getHeight() {
         return sprite.getHeight();
     }
 
