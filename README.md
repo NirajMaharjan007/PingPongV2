@@ -10,6 +10,7 @@ Game Test from libGdx Engine
 ## Credits
 - [LibGDX Documentation](https://libgdx.com/dev/)
 
-
 ## How to Run the Program
 > Use terminal and type gradlew build or gradle(if you have gradle installed) build then gradlew run or gradle run 
+
+`Requires Java 8.0+ to run the program`
