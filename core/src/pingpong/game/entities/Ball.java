@@ -14,9 +14,9 @@ public class Ball {
 
     private float directionX, directionY;
 
-    protected static Vector2 position = new Vector2(width / 2, height / 2);
+    public static Vector2 position = new Vector2(width / 2, height / 2);
 
-    public static boolean playerOne_out = false, running = true;
+    boolean running = true;
 
     static Sprite sprite;
 
@@ -71,19 +71,14 @@ public class Ball {
             directionY = -directionY;
         }
 
-        else if (position.x >= width - sprite.getWidth()) {
-            hit.hit();
+        else if (position.x < 0 || position.x > width - sprite.getWidth()) {
+            running = false;
             directionX = -directionX;
-        } else {
+            position.y = height / 2.0f;
             if (position.x < 0) {
-                playerOne_out = true;
-                running = false;
-                directionX = -directionX;
-                position.y = height / 2.0f;
                 position.x = width / 2.0f;
-            } else {
-                playerOne_out = false;
-                running = true;
+            } else if (position.x > width - sprite.getWidth()) {
+                position.x = width / 2.0f - 14.8f;
             }
         }
     }

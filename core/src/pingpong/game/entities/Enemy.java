@@ -1,6 +1,7 @@
 package pingpong.game.entities;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.math.Vector2;
@@ -28,12 +29,16 @@ public class Enemy {
     }
 
     private void move() {
+        if (Gdx.input.isKeyPressed(Keys.W))
+            position.y += paddle_speed;
+
+        if (Gdx.input.isKeyPressed(Keys.S))
+            position.y -= paddle_speed;
+
         if (position.y > Gdx.graphics.getHeight() - sprite.getHeight())
             position.y -= paddle_speed;
         else if (position.y < 0)
             position.y += paddle_speed;
-
-        position.y = Ball.position.y - Ball.getHeight();
     }
 
     protected static float getWidth() {
