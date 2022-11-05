@@ -29,11 +29,11 @@ public class Enemy {
     }
 
     private void move() {
-        if (Gdx.input.isKeyPressed(Keys.W))
-            position.y += paddle_speed;
-
-        if (Gdx.input.isKeyPressed(Keys.S))
+        if (Gdx.input.isKeyPressed(Keys.DOWN)) {
             position.y -= paddle_speed;
+        } else if (Gdx.input.isKeyPressed(Keys.UP)) {
+            position.y += paddle_speed;
+        }
 
         if (position.y > Gdx.graphics.getHeight() - sprite.getHeight())
             position.y -= paddle_speed;
