@@ -7,6 +7,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.graphics.g2d.*;
 
 import pingpong.game.entities.*;
+import pingpong.game.sound.BGM;
 
 public class GameWorld {
     SpriteBatch batch;
@@ -14,6 +15,7 @@ public class GameWorld {
     Enemy enemy;
     Ball ball;
     BitmapFont font;
+    BGM music;
 
     int count1 = 0, count2 = 0;
 
@@ -27,6 +29,7 @@ public class GameWorld {
         enemy = new Enemy(batch);
 
         font = new BitmapFont();
+        music = new BGM();
 
         font.getData().setScale(1, 1);
 
@@ -36,6 +39,8 @@ public class GameWorld {
     }
 
     public void render() {
+        music.play(true);
+
         batch.begin();
 
         String player1 = "Player one: " + count1;
