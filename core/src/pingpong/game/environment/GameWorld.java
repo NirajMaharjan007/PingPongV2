@@ -1,9 +1,10 @@
 package pingpong.game.environment;
 
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.graphics.g2d.*;
 
 import pingpong.game.entities.*;
 
@@ -12,7 +13,11 @@ public class GameWorld {
     Player player;
     Enemy enemy;
     Ball ball;
-    Score score;
+    BitmapFont font;
+
+    int count1, count2;
+
+    private final int width = Gdx.graphics.getWidth(), height = Gdx.graphics.getHeight();
 
     public void create() {
         batch = new SpriteBatch();
@@ -21,7 +26,9 @@ public class GameWorld {
         ball = new Ball(batch);
         enemy = new Enemy(batch);
 
-        score = new Score();
+        font = new BitmapFont();
+
+        font.getData().setScale(1, 1);
 
         player.create();
         enemy.create();
@@ -30,12 +37,20 @@ public class GameWorld {
 
     public void render() {
         batch.begin();
+
+        String player1 = "Player one: " + count1;
+        String player2 = "Player two: " + count2;
+
+        font.draw(batch, player1, width / 6.8f, height - 34.2f);
+        font.draw(batch, player2, width / 2.0f + 128.8f, height - 34.2f);
+
+        check();
+
         player.render();
         ball.render();
         enemy.render();
         batch.end();
 
-        score.render();
         drawDottedLine(8, 400, 0, 400, 600);
     }
 
@@ -55,6 +70,16 @@ public class GameWorld {
         }
 
         shapeRenderer.end();
+    }
+
+    private void check() {
+        System.out.println("GameWorld.check()" + count1 + " " + count2);
+        if (Ball.position.x < Player.position.x)
+            count1++;
+
+        else if (Ball.position.x > Enemy.position.x)
+            count2++;
+
     }
 
 }
