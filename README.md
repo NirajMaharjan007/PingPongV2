@@ -7,6 +7,11 @@ Game Test from libGdx Engine
 - [Gradle](https://gradle.org/install/) *Optional*
 - [LibGDX](https://libgdx.com/)
 
+## Conclusion
+- Input is better than Ping Pong V1.
+- No two input collision
+- Better framerate
+
 ## Credits
 - [LibGDX Documentation](https://libgdx.com/dev/)
 
