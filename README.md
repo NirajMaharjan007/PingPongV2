@@ -4,7 +4,7 @@ Game Test from libGdx Engine
 ## Usages
 - [VS Code](https://code.visualstudio.com/)
 - [Java](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) 
-- [Gradle](https://gradle.org/install/) `Optional`
+- [Gradle](https://gradle.org/install/) *Optional*
 - [LibGDX](https://libgdx.com/)
 
 ## Credits
