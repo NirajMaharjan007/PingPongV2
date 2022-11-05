@@ -15,7 +15,7 @@ public class GameWorld {
     Ball ball;
     BitmapFont font;
 
-    int count1, count2;
+    int count1 = 0, count2 = 0;
 
     private final int width = Gdx.graphics.getWidth(), height = Gdx.graphics.getHeight();
 
@@ -73,12 +73,12 @@ public class GameWorld {
     }
 
     private void check() {
-        System.out.println("GameWorld.check()" + count1 + " " + count2);
+        // System.out.println("GameWorld.check()" + count1 + " " + count2);
         if (Ball.position.x < Player.position.x)
-            count1++;
+            count2++;
 
         else if (Ball.position.x > Enemy.position.x)
-            count2++;
+            count1++;
 
     }
 
